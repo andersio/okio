@@ -89,7 +89,10 @@ internal constructor(data: ByteArray) : Comparable<ByteString> {
    * `beginIndex` and ends at the specified `endIndex`. Returns this byte string if `beginIndex` is
    * 0 and `endIndex` is the length of this byte string.
    */
-  fun substring(beginIndex: Int = 0, endIndex: Int = size): ByteString
+  fun substring(beginIndex: Int = 0, endIndex: Int): ByteString
+
+  // workaround
+  fun substring(beginIndex: Int = 0): ByteString
 
   /**
    * Returns a byte string equal to this byte string, but with the bytes 'a' through 'z' replaced
@@ -147,9 +150,15 @@ internal constructor(data: ByteArray) : Comparable<ByteString> {
   @JvmOverloads
   fun indexOf(other: ByteArray, fromIndex: Int = 0): Int
 
-  fun lastIndexOf(other: ByteString, fromIndex: Int = size): Int
+  fun lastIndexOf(other: ByteString, fromIndex: Int): Int
 
-  fun lastIndexOf(other: ByteArray, fromIndex: Int = size): Int
+  fun lastIndexOf(other: ByteArray, fromIndex: Int): Int
+
+  // workaround
+  fun lastIndexOf(other: ByteString): Int
+
+  // workaround
+  fun lastIndexOf(other: ByteArray): Int
 
   override fun equals(other: Any?): Boolean
 
@@ -177,7 +186,10 @@ internal constructor(data: ByteArray) : Comparable<ByteString> {
      * starting at `offset`.
      */
     @JvmStatic
-    fun ByteArray.toByteString(offset: Int = 0, byteCount: Int = size): ByteString
+    fun ByteArray.toByteString(offset: Int = 0, byteCount: Int): ByteString
+
+    // workaround
+    fun ByteArray.toByteString(offset: Int = 0): ByteString
 
     /** Returns a new byte string containing the `UTF-8` bytes of this [String].  */
     @JvmStatic

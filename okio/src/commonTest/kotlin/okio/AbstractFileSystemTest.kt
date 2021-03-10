@@ -57,6 +57,7 @@ abstract class AbstractFileSystemTest(
     assertTrue(cwdString) {
       cwdString.endsWith("okio${Path.DIRECTORY_SEPARATOR}okio") ||
         cwdString.endsWith("${Path.DIRECTORY_SEPARATOR}okio-parent-okio-test") || // JS
+        cwdString.endsWith("${Path.DIRECTORY_SEPARATOR}okio-parent-okio-jsIr-test") || // JS IR
         cwdString.contains("/CoreSimulator/Devices/") || // iOS simulator.
         cwdString == "/" // Android emulator.
     }

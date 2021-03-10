@@ -574,12 +574,14 @@ actual class Buffer : BufferedSource, BufferedSink, Cloneable, ByteChannel {
 
   actual fun snapshot(byteCount: Int): ByteString = commonSnapshot(byteCount)
 
-  @JvmOverloads
+  // @JvmOverloads
   actual fun readUnsafe(unsafeCursor: UnsafeCursor): UnsafeCursor = commonReadUnsafe(unsafeCursor)
+  actual fun readUnsafe(): UnsafeCursor = readUnsafe(UnsafeCursor()) // Workaround
 
-  @JvmOverloads
+  // @JvmOverloads
   actual fun readAndWriteUnsafe(unsafeCursor: UnsafeCursor): UnsafeCursor =
     commonReadAndWriteUnsafe(unsafeCursor)
+  actual fun readAndWriteUnsafe(): UnsafeCursor = readAndWriteUnsafe(UnsafeCursor()) // Workaround
 
   @JvmName("-deprecated_getByte")
   @Deprecated(

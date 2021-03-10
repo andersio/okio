@@ -5,7 +5,7 @@ kotlin {
     withJava()
   }
   if (kmpJsEnabled) {
-    js {
+    js(IR) {
       configure([compilations.main, compilations.test]) {
         tasks.getByName(compileKotlinTaskName).kotlinOptions {
           moduleKind = "umd"

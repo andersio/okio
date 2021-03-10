@@ -236,7 +236,8 @@ abstract class AbstractBufferedSinkTest internal constructor(
 
   private fun assertLongDecimalString(value: Long) {
     sink.writeDecimalLong(value).writeUtf8("zzz").flush()
-    val expected = "${value}zzz"
+    val valueString = value.toString() // compiler constant folding error workaround
+    val expected = "${valueString}zzz"
     val actual = data.readUtf8()
     assertEquals(expected, actual, "$value expected $expected but was $actual")
   }

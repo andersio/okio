@@ -102,6 +102,9 @@ internal actual constructor(
   actual open fun substring(beginIndex: Int, endIndex: Int): ByteString =
     commonSubstring(beginIndex, endIndex)
 
+  // workaround
+  actual fun substring(beginIndex: Int) = substring(beginIndex, size)
+
   internal actual open fun internalGet(pos: Int): Byte {
     if (pos >= size || pos < 0) throw ArrayIndexOutOfBoundsException("size=$size pos=$pos")
     return commonGetByte(pos)
@@ -151,6 +154,11 @@ internal actual constructor(
 
   actual open fun lastIndexOf(other: ByteArray, fromIndex: Int) = commonLastIndexOf(other, fromIndex)
 
+  // workaround
+  actual fun lastIndexOf(other: ByteString) = lastIndexOf(other, size)
+  // workaround
+  actual fun lastIndexOf(other: ByteArray) = lastIndexOf(other, size)
+
   actual override fun equals(other: Any?) = commonEquals(other)
 
   actual override fun hashCode() = commonHashCode()
@@ -170,6 +178,10 @@ internal actual constructor(
 
     actual fun ByteArray.toByteString(offset: Int, byteCount: Int): ByteString =
       commonToByteString(offset, byteCount)
+
+    // workaround
+    actual fun ByteArray.toByteString(offset: Int): ByteString =
+      toByteString(offset, size)
 
     actual fun String.encodeUtf8(): ByteString = commonEncodeUtf8()
 
