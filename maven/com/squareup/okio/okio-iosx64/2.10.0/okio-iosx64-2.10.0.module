@@ -1,0 +1,62 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../okio-multiplatform/2.10.0/okio-multiplatform-2.10.0.module",
+    "group": "com.squareup.okio",
+    "module": "okio-multiplatform",
+    "version": "2.10.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "isbqvgkdibbhjjici5gdu4p53u"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.4.32"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "okio.klib",
+          "url": "okio-iosx64-2.10.0.klib",
+          "size": 260207,
+          "sha512": "73feb5be3073acb242c1d6f764a77b9b066f185a52a6c7bb7733975ce8f61322441aa5b26e89a902f83918186f2be259e490234b555b909ef08afafa084d2f35",
+          "sha256": "7bd684344138c66508d8913f437b9af2288923adc94fc830e8ed7ff0888eada0",
+          "sha1": "f6ee7fcedebe550a3b14f6728c1ee4fe6608bee0",
+          "md5": "276246a94838f3eff0b3737dc2d57e68"
+        }
+      ]
+    },
+    {
+      "name": "metadataApiElements-published",
+      "attributes": {
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "available-at": {
+        "url": "../../okio-metadata/2.10.0/okio-metadata-2.10.0.module",
+        "group": "com.squareup.okio",
+        "module": "okio-metadata",
+        "version": "2.10.0"
+      }
+    }
+  ]
+}
