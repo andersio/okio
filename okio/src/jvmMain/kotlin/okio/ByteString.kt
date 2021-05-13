@@ -112,9 +112,10 @@ internal actual constructor(
 
   actual open fun toAsciiUppercase(): ByteString = commonToAsciiUppercase()
 
-  @JvmOverloads
   actual open fun substring(beginIndex: Int, endIndex: Int): ByteString =
     commonSubstring(beginIndex, endIndex)
+
+  actual fun substring(beginIndex: Int): ByteString = substring(beginIndex, size)
 
   internal actual open fun internalGet(pos: Int) = commonGetByte(pos)
 
@@ -170,11 +171,11 @@ internal actual constructor(
   @JvmOverloads
   actual open fun indexOf(other: ByteArray, fromIndex: Int) = commonIndexOf(other, fromIndex)
 
-  @JvmOverloads
   actual fun lastIndexOf(other: ByteString, fromIndex: Int) = commonLastIndexOf(other, fromIndex)
-
-  @JvmOverloads
   actual open fun lastIndexOf(other: ByteArray, fromIndex: Int) = commonLastIndexOf(other, fromIndex)
+
+  actual fun lastIndexOf(other: ByteString) = lastIndexOf(other, size)
+  actual fun lastIndexOf(other: ByteArray) = lastIndexOf(other, size)
 
   actual override fun equals(other: Any?) = commonEquals(other)
 
@@ -228,6 +229,11 @@ internal actual constructor(
     @JvmName("of")
     actual fun ByteArray.toByteString(offset: Int, byteCount: Int): ByteString =
       commonToByteString(offset, byteCount)
+
+    @JvmStatic
+    @JvmName("of")
+    actual fun ByteArray.toByteString(offset: Int): ByteString =
+      commonToByteString(offset, size)
 
     /** Returns a [ByteString] containing a copy of this [ByteBuffer]. */
     @JvmStatic

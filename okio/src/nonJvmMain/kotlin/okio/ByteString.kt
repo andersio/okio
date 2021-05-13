@@ -48,6 +48,7 @@ import okio.internal.commonToByteString
 import okio.internal.commonToString
 import okio.internal.commonUtf8
 import okio.internal.commonWrite
+import kotlin.jvm.JvmOverloads
 
 actual open class ByteString
 internal actual constructor(
@@ -101,6 +102,7 @@ internal actual constructor(
 
   actual open fun substring(beginIndex: Int, endIndex: Int): ByteString =
     commonSubstring(beginIndex, endIndex)
+  actual fun substring(beginIndex: Int): ByteString = substring(beginIndex, size)
 
   internal actual open fun internalGet(pos: Int): Byte {
     if (pos >= size || pos < 0) throw ArrayIndexOutOfBoundsException("size=$size pos=$pos")
@@ -151,6 +153,9 @@ internal actual constructor(
 
   actual open fun lastIndexOf(other: ByteArray, fromIndex: Int) = commonLastIndexOf(other, fromIndex)
 
+  actual fun lastIndexOf(other: ByteString) = lastIndexOf(other, size)
+  actual fun lastIndexOf(other: ByteArray) = lastIndexOf(other, size)
+
   actual override fun equals(other: Any?) = commonEquals(other)
 
   actual override fun hashCode() = commonHashCode()
@@ -170,6 +175,8 @@ internal actual constructor(
 
     actual fun ByteArray.toByteString(offset: Int, byteCount: Int): ByteString =
       commonToByteString(offset, byteCount)
+    actual fun ByteArray.toByteString(offset: Int): ByteString =
+      commonToByteString(offset, size)
 
     actual fun String.encodeUtf8(): ByteString = commonEncodeUtf8()
 

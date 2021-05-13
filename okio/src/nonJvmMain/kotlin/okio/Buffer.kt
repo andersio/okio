@@ -297,6 +297,9 @@ actual class Buffer : BufferedSource, BufferedSink {
   actual fun readAndWriteUnsafe(unsafeCursor: UnsafeCursor): UnsafeCursor =
     commonReadAndWriteUnsafe(unsafeCursor)
 
+  actual fun readUnsafe(): UnsafeCursor = commonReadUnsafe(UnsafeCursor())
+  actual fun readAndWriteUnsafe(): UnsafeCursor = commonReadAndWriteUnsafe(UnsafeCursor())
+
   actual class UnsafeCursor {
     actual var buffer: Buffer? = null
     actual var readWrite: Boolean = false

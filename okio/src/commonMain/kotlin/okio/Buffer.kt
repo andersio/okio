@@ -142,9 +142,11 @@ expect class Buffer() : BufferedSource, BufferedSink {
   /** Returns an immutable copy of the first `byteCount` bytes of this buffer as a byte string. */
   fun snapshot(byteCount: Int): ByteString
 
-  fun readUnsafe(unsafeCursor: UnsafeCursor = UnsafeCursor()): UnsafeCursor
+  fun readUnsafe(unsafeCursor: UnsafeCursor): UnsafeCursor
+  fun readUnsafe(): UnsafeCursor
 
-  fun readAndWriteUnsafe(unsafeCursor: UnsafeCursor = UnsafeCursor()): UnsafeCursor
+  fun readAndWriteUnsafe(unsafeCursor: UnsafeCursor): UnsafeCursor
+  fun readAndWriteUnsafe(): UnsafeCursor
 
   /**
    * A handle to the underlying data in a buffer. This handle is unsafe because it does not enforce
