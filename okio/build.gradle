@@ -45,6 +45,7 @@ kotlin {
           metaInfo = true
         }
       }
+      browser()
       nodejs {
         testTask {
           useMocha {
