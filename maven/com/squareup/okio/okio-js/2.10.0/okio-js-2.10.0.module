@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../okio-multiplatform/2.10.0/okio-multiplatform-2.10.0.module",
+    "group": "com.squareup.okio",
+    "module": "okio-multiplatform",
+    "version": "2.10.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.7.1",
+      "buildId": "pcggdrbhgrhzdoicyzf4zswwn4"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "1.5.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.5.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "okio-js-2.10.0.klib",
+          "url": "okio-js-2.10.0.klib",
+          "size": 272114,
+          "sha512": "0c39f7e9b62eb0e8948d924b0a409873d406d806842b15b3b5ae58924515edb2526c84b81b7fad3c6b079cf92fdae3294c72609f6f251a66a449f37294ddf056",
+          "sha256": "4020b64e3b569a9c96479364f9b4470dac3cccf031d378eddf564ce293e7d259",
+          "sha1": "812be54fa2486d96da301d3df6f792de207ee97a",
+          "md5": "5a4999e7781be3eeb4e320f4d079045b"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-js",
+          "version": {
+            "requires": "1.5.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.5.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "okio-js-2.10.0.klib",
+          "url": "okio-js-2.10.0.klib",
+          "size": 272114,
+          "sha512": "0c39f7e9b62eb0e8948d924b0a409873d406d806842b15b3b5ae58924515edb2526c84b81b7fad3c6b079cf92fdae3294c72609f6f251a66a449f37294ddf056",
+          "sha256": "4020b64e3b569a9c96479364f9b4470dac3cccf031d378eddf564ce293e7d259",
+          "sha1": "812be54fa2486d96da301d3df6f792de207ee97a",
+          "md5": "5a4999e7781be3eeb4e320f4d079045b"
+        }
+      ]
+    }
+  ]
+}
