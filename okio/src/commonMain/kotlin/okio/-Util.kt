@@ -105,7 +105,7 @@ internal fun Byte.toHexString(): String {
   val result = CharArray(2)
   result[0] = HEX_DIGIT_CHARS[this shr 4 and 0xf]
   result[1] = HEX_DIGIT_CHARS[this       and 0xf] // ktlint-disable no-multi-spaces
-  return String(result)
+  return result.concatToString()
 }
 
 internal fun Int.toHexString(): String {
@@ -128,7 +128,7 @@ internal fun Int.toHexString(): String {
     i++
   }
 
-  return String(result, i, result.size - i)
+  return result.concatToString(i, result.size - i)
 }
 
 internal fun Long.toHexString(): String {
@@ -159,5 +159,5 @@ internal fun Long.toHexString(): String {
     i++
   }
 
-  return String(result, i, result.size - i)
+  return result.concatToString(i, result.size - i)
 }
